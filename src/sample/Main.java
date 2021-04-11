@@ -13,17 +13,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Lienzo lienzo = new Lienzo();
-//        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-//        primaryStage.setTitle("Hello World");
-//        primaryStage.setScene(new Scene(root, 300, 275));
-//        primaryStage.show();
         lienzo.prueba(500, 500);
-        Triangulo tri = new Triangulo(200, 360, 100, 100);
-        Triangulo tri2 = new Triangulo(200, 100, 100, 100);
-        lienzo.agregarAlgo(tri);
-        lienzo.agregarAlgo(tri2);
-        lienzo.agregarAlgo(new Triangulo(200, 300, 100, 100));
-        lienzo.agregarAlgo(new Triangulo(300, 300, 100, 100));
+        Triangulo tri = new Triangulo(200, 360, 100, 100, 500, 500);
+        Triangulo tri2 = new Triangulo(200, 100, 100, 100, 500, 500);
+        lienzo.agregarFigura(tri);
+        lienzo.agregarFigura(tri2);
+        tri2.reboteHorizontal(1);
+        tri.reboteVertical(2);
         lienzo.run();
         System.out.println("Entro");
         tri.animacion();

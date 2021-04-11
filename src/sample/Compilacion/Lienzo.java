@@ -15,7 +15,7 @@ public class Lienzo {
         stage.setScene(new Scene(root, x, y));
     }
 
-    public void agregarAlgo(Node circulo){
+    public void agregarFigura(Node circulo){
         root.getChildren().add(circulo);
     }
 
