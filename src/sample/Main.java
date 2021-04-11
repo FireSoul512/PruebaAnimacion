@@ -1,7 +1,6 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 import sample.Compilacion.Circulo;
 import sample.Compilacion.Cuadrado;
@@ -14,17 +13,15 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Lienzo lienzo = new Lienzo();
         lienzo.prueba(500, 500);
-        Triangulo tri = new Triangulo(200, 360, 100, 100, 500, 500);
-        Triangulo tri2 = new Triangulo(200, 100, 100, 100, 500, 500);
-        lienzo.agregarFigura(tri);
-        lienzo.agregarFigura(tri2);
-        tri2.reboteHorizontal(1);
-        tri.reboteVertical(2);
+        Cuadrado cad = new Cuadrado(300, 300, 50, 500, 500);
+        Circulo cir = new Circulo(200,200, 50, 500, 500);
+        lienzo.agregarFigura(cir);
+        cir.reboteVertical(2);
+        cad.diagonal(1,1);
+        lienzo.agregarFigura(cad);
         lienzo.run();
-        System.out.println("Entro");
-        tri.animacion();
-        System.out.println("Entro 2");
-        tri2.animacion();
+        cad.animacion();
+        cir.animacion();
 
     }
 
